@@ -67,6 +67,38 @@ console.log("12 + 3" - 3);
 // 12 + 33
 // NaN
 
+//valueOf function returning premitive value.
+let a = 10 - {"a": 10 , valueOf(){return 8;}}
+
+console.log(a); //2
+
+//valueOf function returning non-premitive function.
+let b = 10 - {"a": 10 , valueOf(){return {};}, toString(){return "5";}}
+
+console.log(b); //5
+
+let c = 10 - {"z": 10 , valueOf(){return "z";}}
+
+console.log(c);
+
+
+let d = 10 + {"z": 10 , valueOf(){return "z";}}
+
+console.log(d); //10z
+
+let x = {a:10};
+console.log(x.a); //10
+
+x.b = 10;
+x.c = 30;
+console.log(x); //{ a: 10, b: 10, c: 30 }
+
+
+console.log({x:10, x:20}); //{ x: 20 }
+
+let p = {"x":-1 , valueOf(){return p.x}};
+
+console.log(10-p); //11
 
 
 
